@@ -44,9 +44,15 @@ export const AppForm = ({}) => {
     if (timerDebounceRef.current) {
       clearTimeout(timerDebounceRef.current);
     }
-    timerDebounceRef.current = setTimeout(() => {
-      validationPipe();
-    }, 500);
+    if (
+      formValue.email !== "" ||
+      formValue.password !== "" ||
+      formValue.repeatPassword !== ""
+    ) {
+      timerDebounceRef.current = setTimeout(() => {
+        validationPipe();
+      }, 500);
+    }
   }, [formValue]);
 
   const signUp = (event) => {

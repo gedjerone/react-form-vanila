@@ -31,8 +31,7 @@ export const validate = ({ email, password, repeatPassword }) => {
   if (!isCorrectEmail(email)) {
     return {
       isPassword: false,
-      message:
-        "Email isn't correct email. Please provide real email address again",
+      message: "Email isn't correct. Please provide real email address again",
     };
   }
   if (!isCorrectPassword(password)) {
